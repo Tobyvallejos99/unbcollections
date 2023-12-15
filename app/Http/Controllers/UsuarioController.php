@@ -86,23 +86,10 @@ class UsuarioController extends Controller
      */
     public function update(Request $request, Usuario $usuario)
     {
-        $rules = Usuario::$rules;
-        if ($request->filled('password')) {
-            $rules['password'] = 'required|string|min:8|confirmed';
-        } else {
-            unset($rules['password']);
-        }
-        request()->validate($rules);
-    
-        $data = $request->all();
-        if ($request->filled('password')) {
-            $data['password'] = bcrypt($request->get('password'));
-        } else {
-            $data['password'] = $usuario->password;
-        }
-    
-        $usuario->update($data);
-    
+        request()->validate(Usuario::$rules);
+
+        $usuario->update($request->all());
+
         return redirect()->route('usuarios.index')
             ->with('success', 'Usuario updated successfully');
     }

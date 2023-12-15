@@ -23,7 +23,7 @@
         </div>
         <div class="form-group">
             {{ Form::label('password') }}
-            {{ Form::password('password', ['class' => 'form-control' . ($errors->has('password') ? ' is-invalid' : ''), 'placeholder' => 'si quiere cambiar la contrasena, rellene este campo']) }}
+            {{ Form::password('password', ['class' => 'form-control' . ($errors->has('password') ? ' is-invalid' : ''), 'placeholder' => 'Contraseña/Nueva Contraseña']) }}
             {!! $errors->first('password', '<div class="invalid-feedback">:message</div>') !!}
         </div>
     </div>
