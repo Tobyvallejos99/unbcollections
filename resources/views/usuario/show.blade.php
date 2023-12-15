@@ -1,46 +1,44 @@
 @extends('layouts.app')
 
 @section('template_title')
-    {{ $usuario->name ?? "{{ __('Show') Usuario" }}
+    {{ $usuario->name ?? __('Show Usuario') }}
 @endsection
 
 @section('content')
-    <section class="content container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header">
-                        <div class="float-left">
-                            <span class="card-title">{{ __('Show') }} Usuario</span>
-                        </div>
-                        <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('usuarios.index') }}"> {{ __('Back') }}</a>
-                        </div>
+    <section class="bg-gray-100 py-8">
+        <div class="container mx-auto">
+            <div class="w-full md:w-2/3 lg:w-1/2 mx-auto">
+
+                <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                    <div class="flex items-center justify-between">
+                        <h2 class="text-2xl mb-6 font-bold">{{ __('  *Usuario*') }}</h2>
+                        <hr>
+                        <a href="{{ route('usuarios.index') }}" class= "btn btn-primary m-1">
+                            {{ __('Back') }}
+                        </a>
                     </div>
 
-                    <div class="card-body">
-                        
-                        <div class="form-group">
-                            <strong>Nombre:</strong>
-                            {{ $usuario->nombre }}
+                    <div class="mb-4">
+                        <div class="mb-4">
+                            <strong class="block text-gray-700">Nombre:</strong>
+                            <span class="text-gray-900">{{ $usuario->nombre }}</span>
                         </div>
-                        <div class="form-group">
-                            <strong>Apellido:</strong>
-                            {{ $usuario->apellido }}
+                        <div class="mb-4">
+                            <strong class="block text-gray-700">Apellido:</strong>
+                            <span class="text-gray-900">{{ $usuario->apellido }}</span>
                         </div>
-                        <div class="form-group">
-                            <strong>Email:</strong>
-                            {{ $usuario->email }}
+                        <div class="mb-4">
+                            <strong class="block text-gray-700">Email:</strong>
+                            <span class="text-gray-900">{{ $usuario->email }}</span>
                         </div>
-                        <div class="form-group">
-                            <strong>Telefono:</strong>
-                            {{ $usuario->telefono }}
+                        <div class="mb-4">
+                            <strong class="block text-gray-700">Telefono:</strong>
+                            <span class="text-gray-900">{{ $usuario->telefono }}</span>
                         </div>
-                        <div class="form-group">
-                            <strong>password:</strong>
-                            {{ $usuario->password }}
+                        <div class="mb-4">
+                            <strong class="block text-gray-700">Contraseña:</strong>
+                            <span class="text-gray-900">{{ $usuario->password }}</span>
                         </div>
-
                     </div>
                 </div>
             </div>

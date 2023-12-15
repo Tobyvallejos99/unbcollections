@@ -5,25 +5,24 @@
 @endsection
 
 @section('content')
-    <section class="content container-fluid">
-        <div class="">
-            <div class="col-md-12">
+    <section class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto">
+            <div class="w-full md:w-2/3 lg:w-1/2 mx-auto">
 
                 @includeif('partials.errors')
 
-                <div class="card card-default">
-                    <div class="card-header">
-                        <span class="card-title">{{ __('Update') }} Usuario</span>
-                    </div>
-                    <div class="card-body">
-                        <form method="POST" action="{{ route('usuarios.update', $usuario->id) }}"  role="form" enctype="multipart/form-data">
-                            {{ method_field('PATCH') }}
-                            @csrf
+                <div class="bg-black shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                    <h2 class="text-2xl mb-6 font-bold">{{ __('Update') }} Usuario</h2>
+                    <form method="POST" action="{{ route('usuarios.update', $usuario->id) }}" role="form" enctype="multipart/form-data">
+                        {{ method_field('PATCH') }}
+                        @csrf
 
-                            @include('usuario.form')
+                        @include('usuario.form')
 
-                        </form>
-                    </div>
+                        <div class="flex items-center justify-between mt-10">
+                            <a href="{{ route('usuarios.index') }}" class="text-gray-500 hover:text-gray-700">{{ __('Cancel') }}</a>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
